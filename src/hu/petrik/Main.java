@@ -50,10 +50,11 @@ public class Main {
             System.err.println("Nem természetes számot adott meg");
         }else{
             for (int i = 0; i < bekertDarabszam; i++) {
+                sc.nextLine();
                 System.out.printf("Kérem írja be a szöveget amelyre a(z) %d. elem szerzőjét szeretné beáálitani\n", (i+1));
                 sc.nextLine();
                 System.out.printf("Kérem írja be a szöveget amelyre a(z) %d. elem tartalmát szeretné beáálitani\n", (i+1));
-                sc.nextLine();
+
             }
         }
 
