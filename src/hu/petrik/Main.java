@@ -22,7 +22,7 @@ public class Main {
         try {
             Beolvasas("bejegyzesek.csv");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Ismeretlen hiba történt a fájl beolvasása során");
         }
         Feladat2d();
 
@@ -32,12 +32,12 @@ public class Main {
         Feladat3a();
         Feladat3b();
         Feladat3c();
-       // Feladat3d();
-       // try {
-       //     kiIras("bejegyzesek.csv");
-       // } catch (IOException e) {
-       //     e.printStackTrace();
-       // }
+        Feladat3d();
+        try {
+            kiIras("bejegyzesek_rendezett.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -115,8 +115,8 @@ public class Main {
     public static void kiIras(String fajlNev) throws IOException {
         FileWriter fw = new FileWriter(fajlNev);
         BufferedWriter bw = new BufferedWriter(fw);
-        for (int i = 0; i < bejegyzesLista.size(); i++) {
-            bw.write(bejegyzesLista.toString());
+        for (int i = 0; i < atrendezettBejegyzesLista.size(); i++) {
+            bw.write(atrendezettBejegyzesLista.get(i).toString());
         }
         bw.close();
         fw.close();
