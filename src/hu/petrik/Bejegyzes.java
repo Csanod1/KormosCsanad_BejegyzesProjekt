@@ -2,6 +2,7 @@ package hu.petrik;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class Bejegyzes {
     private String szerzo;
