@@ -52,7 +52,7 @@ public class Bejegyzes {
     public String toString() {
         DateTimeFormatter formatum = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String s = String.format("%s - %d - %s", this.szerzo, this.likeok, this.letrejott.format(formatum));
-        if (this.szerkesztve.isAfter(this.letrejott)){
+        if (this.letrejott.isAfter(this.letrejott)){
             return  String.format(s + "\nSzerkesztve: %s\n%s", this.szerkesztve.format(formatum), this.tartalom);
         }else {
             return  String.format(s +"\n%s", this.tartalom);

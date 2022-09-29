@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static hu.petrik.Bejegyzes.*;
+
 public class Main {
     public static List<Bejegyzes> bejegyzesLista = new ArrayList<>();
     public static void main(String[] args) {
@@ -15,6 +17,13 @@ public class Main {
         Bejegyzes masodikBejegyzes = new Bejegyzes("Volti Ferenc", "De minden megváltozott mikor a tűz népe támadást indított");
         bejegyzesLista.add(elsoBejegyzes);
         bejegyzesLista.add(masodikBejegyzes);
+        Feladat2b();
+        try {
+            Bejegyzesek("bejegyzesek.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(bejegyzesLista);
 
     }
 
@@ -30,6 +39,7 @@ public class Main {
                 bejegyzesLista.add(new Bejegyzes("Szerző" + (i+1),"Tartalom"+ (i+1)));
             }
         }
+
     }
     public static void Bejegyzesek(String fajlNev) throws IOException {
         FileReader fr = new FileReader(fajlNev);
@@ -43,6 +53,16 @@ public class Main {
         }
         br.close();
         fr.close();
+    }
+    public static void Feladat2d(){
+        int likeSzam = bejegyzesLista.size()*20;
+
+    }
+    public static void Feladat2e(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Kérem Írja be a szöveget amelyre cserélni szeretni a második bejegyzés tartalmát");
+        String s = sc.nextLine();
+        bejegyzesLista.get(1).setTartalom(s);
     }
 
 
